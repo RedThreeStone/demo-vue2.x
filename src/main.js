@@ -11,7 +11,15 @@ new Vue({
   el: '#app',
   components: { App },
   router,
-  template: '<App/>'
+  template: '<App/>',
+  data:{
+    value:'全局变量'
+  },
+  //其他的生命周期方法:mounted  updated  destroyed
+  created:function () {
+    console.log("创建vue实例完成立马触发的方法");
+  }
 })
+
 
 

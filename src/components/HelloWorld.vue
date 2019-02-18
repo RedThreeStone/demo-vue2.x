@@ -5,6 +5,9 @@
     <button v-on:click="sayHello">
       点我呀
     </button>
+    <slot name="testSlot" :testSlotValue="testScopeSlotValue">
+      <!--我是作用域插槽测试{{testSlotValue}}-->
+    </slot>
     <ul>
       <li>
         <a
@@ -91,7 +94,9 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: '1111'
+      msg: '1111',
+      testScopeSlotValue:"儿子"
+
     }
   },
   methods:{

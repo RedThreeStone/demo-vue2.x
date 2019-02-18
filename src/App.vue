@@ -2,7 +2,11 @@
   <div id="app">
     <router-view></router-view>
     <img src="./assets/logo.png">
-    <HelloWorld/>
+    <HelloWorld>
+      <template slot="testSlot" slot-scope="slotScope">
+        我是作用域插槽测试{{slotScope.testSlotValue}}
+      </template>
+    </HelloWorld>
   </div>
 </template>
 
@@ -13,6 +17,11 @@ export default {
   name: 'App',
   components: {
     HelloWorld
+  },
+  data: function () {
+    return {
+      // testSlotValue:"父亲"
+    }
   }
 }
 </script>
@@ -26,4 +35,7 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+  .active{
+    color: red;
+  }
 </style>
